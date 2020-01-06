@@ -11,8 +11,8 @@ namespace ProjectName
     public Startup(IHostingEnvironment env)
     {
       var builder = new ConfigurationBuilder()
-          .SetBasePath(env.ContentRootPath)
-          .AddEnvironmentVariables();
+      .SetBasePath(env.ContentRootPath)
+      .AddEnvironmentVariables();
       Configuration = builder.Build();
     }
 
@@ -25,6 +25,7 @@ namespace ProjectName
 
     public void Configure(IApplicationBuilder app)
     {
+      app.UseDeveloperExceptionPage(); 
       app.UseMvc(routes =>
       {
         routes.MapRoute(
